@@ -1,3 +1,19 @@
+<!--
+  Story of EPL Teams Leicester’s Road to Glory and becoming the Premier League Champion
+
+  Submission By: Akshay Tambe (apt321), Ashish Jain (aj2429), Lakshay Sharma (ls4618)
+
+  Project Goal:
+  To extract EPL match statistics over all seasons, perform descriptive analysis and express them
+  through vivid and elusive data visualization techniques.
+
+  We aim to visualize that which were the top teams in every given EPL season, where did a given
+  team stand as compared to others in given EPL seasons and how did they progress eventually with
+  every season. We are also focused on determining which are the teams which were eliminated in a
+  given EPL season and which were promoted to EPL from Division 1 for the next season. In the end,
+  we also want to determine which was the most dominant EPL team in the given tenure.
+-->
+
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
@@ -9,7 +25,7 @@
   	<script src="./libs/c3.min.js"></script>
 	<script src="libs/modernizr.js"></script> <!-- Modernizr -->
 	
-	<title>Responsive Vertical Timeline</title>
+	<title>The Remarkable Rise of Leicester City</title>
 
 	<style>
 		#chart{
@@ -110,7 +126,8 @@
 	<link rel="stylesheet" href="libs/style_vertical.css"> <!-- Resource style -->
 	<link rel="stylesheet" href="libs/demo_vertical.css"> <!-- Demo style -->
 	<header>
-		<h1>Responsive Vertical Timeline</h1>
+		<br/><br/><br/><br/><br/><br/><br/><br/>
+		<h1 style="font-size:40px;">Leicester City's Road to Glory to EPL Triumph</h1>
 	</header>
 
 	<section class="cd-timeline js-cd-timeline">
@@ -119,12 +136,16 @@
 				<div class="cd-timeline__img cd-timeline__img--picture js-cd-img">
 					<img src="img/cd-icon-picture.svg" alt="Picture">
 				</div> <!-- cd-timeline__img -->
-
+				
 				<div class="cd-timeline__content js-cd-content">
-					<h2>Title of section 1</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
-					<a href="#0" class="cd-timeline__read-more">Read more</a>
-					<span class="cd-timeline__date">Jan 14</span>
+					<h2>Rise and Fall from the Premier league</h2>
+					<br/>
+					<img src="img/leicester_1.jpg" alt="Leicester Won Division 1 Championship">
+					<p>Adams guided Leicester to the runners-up spot in Division One and automatic promotion back
+						to the Premier League with more than 90 points. However, Leicester lasted only one season in
+						the top flight and was relegated to the newly labeled Championship, previously known as
+						Division One.</p>
+					<span class="cd-timeline__date">Season 2002-03 & 2003-04</span>
 				</div> <!-- cd-timeline__content -->
 			</div> <!-- cd-timeline__block -->
 
@@ -134,10 +155,13 @@
 				</div> <!-- cd-timeline__img -->
 
 				<div class="cd-timeline__content js-cd-content">
-					<h2>Title of section 2</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?</p>
-					<a href="#0" class="cd-timeline__read-more">Read more</a>
-					<span class="cd-timeline__date">Jan 18</span>
+					<h2>A Rough Patch</h2>
+					<br/>
+					<img src="img/leicester_2.jpg" alt="A Rough Patch">
+					<p>Adams resigned as manager and Craig Levein was appointed as the boss who proved
+						to be an unsuccessful while his 15 months tenure before being replaced by assistant manager
+						Rob Kelly as the new manager.</p>
+					<span class="cd-timeline__date">Season 2003-04 & 2004-05</span>
 				</div> <!-- cd-timeline__content -->
 			</div> <!-- cd-timeline__block -->
 
@@ -147,10 +171,15 @@
 				</div> <!-- cd-timeline__img -->
 
 				<div class="cd-timeline__content js-cd-content">
-					<h2>Title of section 3</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, obcaecati, quisquam id molestias eaque asperiores voluptatibus cupiditate error assumenda delectus odit similique earum voluptatem doloremque dolorem ipsam quae rerum quis. Odit, itaque, deserunt corporis vero ipsum nisi eius odio natus ullam provident pariatur temporibus quia eos repellat consequuntur perferendis enim amet quae quasi repudiandae sed quod veniam dolore possimus rem voluptatum eveniet eligendi quis fugiat aliquam sunt similique aut adipisci.</p>
-					<a href="#0" class="cd-timeline__read-more">Read more</a>
-					<span class="cd-timeline__date">Jan 24</span>
+					<h2>Further Downfall to the third tier</h2>
+					<br/>
+					<img src="img/leicester_3.jpg" alt="Ian Holloway was appointed the manager">
+					<p>On 22 November 2006, Ian Holloway was appointed the manager, and he became the first Leicester
+						manager in over 50 years to win his first league match in charge, beating Bristol City 2-0.
+						However, this success did not last, and Leicester was relegated from the Championship at the
+						end of the 2007-08 season. Holloway left by mutual consent after less than a season at the
+						club, being replaced by Nigel Pearson.</p>
+					<span class="cd-timeline__date">Season 2005-06 to 2007-08</span>
 				</div> <!-- cd-timeline__content -->
 			</div> <!-- cd-timeline__block -->
 
@@ -790,22 +819,21 @@
 	var ch = viz.ch().data(season_data)
 			.padding(.01)
 			.sort(sort)
-			.innerRadius(430)
-			.outerRadius(450)
+			.innerRadius(430*0.75)
+			.outerRadius(450*0.75)
 			.duration(1000)
 			.chordOpacity(0.3)
 			.labelPadding(.03)
 			.fill(function(d){ return team_colors[d];});
 
-	var width=1200, height=1100;
+	var width=1200*0.75, height=1100*0.75;
 
-	var svg = d3.select("#performance").append("svg").attr("height",height).attr("width",width);
+	var svg = d3.select("body").append("svg").attr("height",height).attr("width",width);
 
-	svg.append("g").attr("transform", "translate(600,550)").call(ch);
+	svg.append("g").attr("transform", "translate(450,412.5)").call(ch);//600,550
 
 	// adjust height of frame
 	d3.select(self.frameElement).style("height", height+"px").style("width", width+"px");
 	</script>
-	<div id="performance"></div>
 </body>
 </html>
